@@ -1,19 +1,25 @@
+// 1 prompt the user for password criteria
+  //  - pass length 8 < 128
+  // l - owercase, uppercase, special characters
+// 2 validate the input
+// 3 generate password based on criteria
+// 4 display password to the page
+
 var characterLength = 8;
 var choiceArr = [];
 
+
+
 //Arrays
 var specialCharArr = ['!','@','#','$','%','^','&','*','(',')'];
-var lowerCassArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var lowerCassArr = ['abcdefghijklmnopqrstuvwxyz'.split('')];
 var upperCassArr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var numericArr = ['1','2','3','4','5','6','7','8','9','0',];
 
+
+// main code, display password on screen
 var generateBtn = document.querySelector("#generate");
-  // 1 prompt the user for password criteria
-  // pass length 8 < 128
-  // lowercase, uppercase, special characters
-  // 2 validate the input
-  // 3 generate password based on criteria
-  // 4 display password to the page
+  
 function writePassword() {
   var correctPrompts = getPrompts();
   var passwordText = document.querySelector("#password");
@@ -21,13 +27,11 @@ function writePassword() {
   if(correctPrompts) {
     var password = generatePassword();
     
-
     passwordText.value = password;
-  } else {
-    passwordText.value = "";
-}
+  }
 }
 
+// generate password
 function generatePassword() {
   var password = "";
   for(var i = 0; i < characterLength; i++) {
@@ -37,5 +41,28 @@ function generatePassword() {
   return password;
 }
 
+// variables
+function getPrompts(){
+  characterLength = parseInt(prompt("How many character for your password?"));
 
+  if (characterLength < 8 || characterLength > 128) {
+    alert("Please enter a number, between 8 and 128. Try again!");
+    return false;
+  }
+  if (confirm("Do you like lowercase for you code?")) {
+    choiceArr = choiceArr.concat(lowerCassArr);
+  }
+  if (confirm("Do you like uppercase for you code?")) {
+    choiceArr = choiceArr.concat(upperCassArr);
+  }
+  if (confirm("Do you like numerics for you code?")) {
+    choiceArr = choiceArr.concat(numericArr);
+  }
+  if (confirm("Do you like special characters for you code?")) {
+    choiceArr = choiceArr.concat(specialCharArr);
+  }
+  return true;
+}
+
+// generate button
 generateBtn.addEventListener('click', writePassword);
