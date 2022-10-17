@@ -1,5 +1,17 @@
 # Password Generator 
 
+## Table of Contents:
+  
+* [Description](#description)
+* [Technologies](#technologies)
+* [Preview](#preview)
+* [Website-link](#website-link)
+* [Contribution](#contribution)
+* [license](#license)
+* [Contact](#contact)
+
+## Description
+
 Create an application that can be used to generate a random password based on criteria they’ve selected. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code.
 
 Criterias for the password generator:
@@ -17,3 +29,7 @@ Build with:
 HTML
 CSS
 Javascript
+
+## Website-link
+
+https://boris-veselov.github.io/password-generator/
