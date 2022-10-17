@@ -24,6 +24,7 @@ Javascript
 
 ## Preview
 
+<img width="853" alt="Screen Shot 2022-10-17 at 10 44 40 AM" src="https://user-images.githubusercontent.com/96749114/196216839-72726225-ab1c-4966-84fe-a7b9c96c0637.png">
 
 ## Website-link
 
